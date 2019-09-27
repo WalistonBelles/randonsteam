@@ -1,0 +1,20 @@
+<h1> Lista de Postagens </h1>
+
+{{#each posts}}
+
+	<table>
+		<tr>
+			<th>Usuario</th>
+			<th>Email</th>
+			<th>Senha</th>
+		</tr>
+		<tr>
+			<td>{{nome_cli}}</td>
+			<td>{{email_cli}}</td>
+			<td>{{senha_cli}}</td>
+		</tr>
+	</table>
+	<a href="/deletar/{{id}}"><button>Deletar</button></a>
+	<hr>
+
+{{/each}}

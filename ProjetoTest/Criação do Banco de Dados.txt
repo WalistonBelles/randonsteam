@@ -1,0 +1,16 @@
+//Criar database chamada RandonsTeamTest
+
+//Comando para criar a tabela
+
+CREATE TABLE cadastro(
+ id serial primary key,
+ nome_cli character varying NOT NULL,
+ email_cli character varying
+ senha_cli varchar(80) NOT NUL
+ );
+
+//Comando para testar a inserção de dados da tabela
+INSERT INTO cadastro(nome_cli, email_cli, senha_cli) VALUES ('Fulano1', 'fulano@sjsjs','testando123')
+
+//Exibir os dados da tabela
+SELECT * FROM cadastro
