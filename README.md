@@ -8,3 +8,4 @@ Repositório para o evento Code Rade
 - Sudo ok, tá certo, Gider.
 - talkey... to com dor d cabeça
 - Acegua ganhou xD
+- Testado pelo Acegua
