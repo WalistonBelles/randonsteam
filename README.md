@@ -7,3 +7,4 @@ Repositório para o evento Code Rade
 - Gieder o ultimo eh o melhor ok
 - Sudo ok, tá certo, Gider.
 - talkey... to com dor d cabeça
+- Acegua ganhou xD
