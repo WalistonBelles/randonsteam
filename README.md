@@ -6,3 +6,4 @@ Repositório para o evento Code Rade
 - Allan ok
 - Gieder o ultimo eh o melhor ok
 - Sudo ok, tá certo, Gider.
+- talkey... to com dor d cabeça
