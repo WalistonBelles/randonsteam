@@ -1,0 +1,9 @@
+1° git clone https://github.com/WalistonBelles/randonsteam       
+2° cd randonsteam 
+3° git status 
+4° git add . 
+5° git commit -m "Testando um" 
+6° git push origin master 
+
+***** Depois de fazer até o passo 6, não vai + usar o git clone, apenas o git pull que é pra baixar apenas os arquivos que sofreram alteração. Dai baixa, modifica e repete o processo a partir do passo 3 *****
+7° git pull https://github.com/WalistonBelles/randonsteam 
