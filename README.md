@@ -5,3 +5,4 @@ Repositório para o evento Code Rade
 - Dana ok
 - Sudo ok
 - Allan ok
+- Gieder o ultimo eh o melhor ok
