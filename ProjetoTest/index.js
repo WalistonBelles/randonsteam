@@ -13,12 +13,13 @@ const Turma = require('./models/Turma')
 		app.use(bodyParser.urlencoded({extended: false}))
 		app.use(bodyParser.json())
 
+app.use('/static', express.static('public'));
+// <img src="/static/o.png">
+
 //Rotas
 	
 	app.get('/', function(req,res){
-		Cliente.findAll({order: [['id', 'DESC']]}).then(function(clientes){
-			res.render('home', {clientes: clientes})
-		})
+		res.render('home')
 	})
 
 	app.get('/cadastro', function(req, res){
@@ -29,17 +30,36 @@ const Turma = require('./models/Turma')
 		res.render('login')
 	})
 
+	app.get('/sobre', function(req, res){
+		res.render('sobre')
+	})
+
+	app.get('/dashBoardUsuario', function(req, res){
+		res.render('dashBoardUsuario')
+	})
+
+	app.get('/dashBoardProfissional', function(req, res){
+		res.render('dashBoardProfissional')
+	})
+
+	app.get('/userUsuario', function(req, res){
+		res.render('userUsuario')
+	})
+
+	app.get('/userProfissional', function(req, res){
+		res.render('userProfissional')
+	})
+
 	//Validar login
 	app.post('/login', function(req, res){
 		Cliente.findOne({ where: {nome_cli: req.body.nome, senha_cli: req.body.senha}}).then(function(clientes){
 			if(clientes != null){
 				Cliente.findOne({where:{tipo_cli: "Profissional", nome_cli: req.body.nome}}).then(function(clientes){
 					if ( clientes != null){
-					console.log(clientes)
-					res.render('homeProfissional', {nome_cli: req.body.nome, senha_cli: req.body.senha})
+					res.render('userProfissional', {nome_cli: req.body.nome, senha_cli: req.body.senha})
 				}
 				else
-					res.render('home', {tipo_cli: "Profissional", nome_cli: req.body.nome, senha_cli: req.body.senha})
+					res.render('userUsuario', {tipo_cli: "Profissional", nome_cli: req.body.nome, senha_cli: req.body.senha})
 				})
 			}
 			else

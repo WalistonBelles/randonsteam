@@ -1,0 +1,38 @@
+.negrito {
+  font-weight: bold;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.footer {
+  background-color: ghostwhite;
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+.formExemplo{
+  position: relative;
+  left: 50px;
+  width: 25%;
+}
+
+.photo{
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+
+.thumbnail{
+  position: relative;
+  height: 450px;
+  width: 350px;
+}
