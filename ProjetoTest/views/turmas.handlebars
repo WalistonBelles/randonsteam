@@ -1,0 +1,19 @@
+<h1> Lista de todas Turmas </h1>
+
+	<table border='1'>
+		<tr>
+			<td>Local de Partida</td>
+			<td>Horario</td>
+			<td>Zona</td>
+			<td>Instrutor</td>
+		</tr>
+		{{#each turmas}}
+			<tr>
+				<td>{{local_tur}}</td>
+				<td>{{horario_tur}}</td>
+				<td>{{zona_tur}}</td>
+				<td>{{instrutor_tur}}</td>
+			</tr>
+		{{/each}}
+	</table>
+

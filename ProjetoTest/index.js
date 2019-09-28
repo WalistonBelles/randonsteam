@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
-const Post = require('./models/Post')
+const Cliente = require('./models/Post')
+const Turma = require('./models/Turma')
 
 // Config
 	// Template Engine
@@ -15,8 +16,8 @@ const Post = require('./models/Post')
 //Rotas
 	
 	app.get('/', function(req,res){
-		Post.findAll({order: [['id', 'DESC']]}).then(function(posts){
-			res.render('home', {posts: posts})
+		Cliente.findAll({order: [['id', 'DESC']]}).then(function(clientes){
+			res.render('home', {clientes: clientes})
 		})
 	})
 
@@ -28,10 +29,29 @@ const Post = require('./models/Post')
 		res.render('login')
 	})
 
+	//Validar login
+	app.post('/login', function(req, res){
+		Cliente.findOne({ where: {nome_cli: req.body.nome}}).then(function(clientes){
+			res.render('home', Cliente.findOne({ where: {nome_cli: req.body.nome}}))
+		})
+	})
+
+	app.get('/turmas', function(req,res){
+		
+		Turma.findAll().then(function(turmas){
+			res.render('turmas', {turmas: turmas})
+		})
+		
+	})
+
+	app.get('/cadastroTurmas', function(req,res){
+		res.render('cadastroTurmas')
+	})
+
 	app.post('/add', function(req, res){
-		Post.create({
+		Cliente.create({
+			tipo_cli: req.body.tipo,
 			nome_cli: req.body.nome,
-			email_cli: req.body.email,
 			senha_cli: req.body.senha
 		}).then(function(){
 			res.redirect('/')
@@ -40,8 +60,17 @@ const Post = require('./models/Post')
 		})
 	})
 
-	app.post('/login', function(req, res){
-		execSQLQuery('SELECT * FROM usuarios', res);
+	app.post('/addTurmas', function(req,res){
+		Turma.create({
+			local_tur: req.body.local,
+			horario_tur: req.body.horario,
+			zona_tur: req.body.zona,
+			instrutor_tur: req.body.instrutor
+		}).then(function(){
+			res.redirect('/turmas')
+		}).catch(function(erro){
+			res.send("Houve um erro: " + erro)
+		})
 	})
 
 	app.get('/deletar/:id', function(req, res){
@@ -53,23 +82,6 @@ const Post = require('./models/Post')
 	})
 
 //Funções
-	function execSQLQuery(sqlQry, res){
-	  const connection = mysql.createConnection({
-	    host     : 'localhost',
-	    user     : 'root',
-	    password : 'w2a0l0i0',
-	    database : 'sistemadecadastro'
-	  });
-	 
-	  connection.query(sqlQry, function(error, results, fields){
-	      if(error) 
-	        res.json(error);
-	      else
-	        res.json(results);
-	      connection.end();
-	      console.log('executou!');
-	  });
-	}
 
 app.listen(3000, function(){
 	console.log("Servidor Online!! Rodando na url http://localhost:3000");

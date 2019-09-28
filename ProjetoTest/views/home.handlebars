@@ -1,20 +1,18 @@
-<h1> Lista de Postagens </h1>
-
-{{#each posts}}
-
-	<table>
+<h1> Lista de Clientes </h1>
+	<table border="1">
 		<tr>
+			<th>Tipo</th>
 			<th>Usuario</th>
-			<th>Email</th>
 			<th>Senha</th>
 		</tr>
+		{{ where }}
 		<tr>
+			<td>{{tipo_cli}}</td>
 			<td>{{nome_cli}}</td>
-			<td>{{email_cli}}</td>
 			<td>{{senha_cli}}</td>
 		</tr>
 	</table>
+	<br>
+	<button onClick="test()">a</button>
 	<a href="/deletar/{{id}}"><button>Deletar</button></a>
 	<hr>
-
-{{/each}}

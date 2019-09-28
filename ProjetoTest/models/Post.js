@@ -12,7 +12,19 @@ const Post = db.sequelize.define('usuario', {
 	}
 })
 
-//Cria a tabela no banco de dados \/
-//Post.sync({force: true});
+const Cliente = db.sequelize.define('cliente', {
+	tipo_cli: {
+		type: db.Sequelize.STRING
+	},
+	nome_cli: {
+		type: db.Sequelize.STRING
+	},
+	senha_cli: {
+		type: db.Sequelize.STRING
+	}
+})
 
-module.exports = Post
+//Cria a tabela no banco de dados \/
+//Cliente.sync({force: true});
+
+module.exports = Cliente

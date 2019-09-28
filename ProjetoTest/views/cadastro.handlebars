@@ -1,9 +1,13 @@
 <form action="/add" method="post" accept-charset="utf-8">
-	<label for='i1'>Nome de usuário</label>
-	<input type='text' name='nome' id='i1'>
+	<label for='i1'>Categoria de usuário</label>
+	<select name="tipo" id="i1">
+		<option hidden>Selecione sua Categoria</option>
+		<option>Ciclista</option>
+		<option>Profissional</option>
+	</select>
 	<br><br>
-	<label for='i2'>E-mail do usuário</label>
-	<input type='text' name='email' id='i2'>
+	<label for='i2'>Nome do usuário</label>
+	<input type='text' name='nome' id='i2'>
 	</br><br>
 	<label for='i3'>Senha</label>
 	<input type='password' name='senha' id='i3'>
