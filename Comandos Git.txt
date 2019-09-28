@@ -6,4 +6,4 @@
 6° git push origin master 
 
 ***** Depois de fazer até o passo 6, não vai + usar o git clone, apenas o git pull que é pra baixar apenas os arquivos que sofreram alteração. Dai baixa, modifica e repete o processo a partir do passo 3 *****
-7° git pull https://github.com/WalistonBelles/randonsteam 
+7° git pull https://github.com/WalistonBelles/randonsteam

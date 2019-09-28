@@ -1,0 +1,21 @@
+Plataforma Web que gerencia e agrupa ciclistas por respectivas zonas das cidades.
+
+Parcerias: Cria parceria com academias/lojas de acessórios e vestuários afim de chamar mais clientes para sua respectivas empresas e ou fidelizar os atuais, gerando cupons de desconto para os usuarios (ciclistas).
+
+Monetização: 
+-O lucro vai ser gerado conforme a taxa que as academias irão pagar para terem suas empresas divulgadas.
+-Empresas de acessórios de biciletas
+-Empresas de acessórios/vestuário esportivos
+-Empresas de suplementos e alguma outra coisa natural
+
+Vantagem:
+-Diminui o tráfego de veículos em determinas regioes
+-Aumenta a sustentabilidade do meio ambiente
+-Estimula hábitos saudáveis
+-Proporciona maior segurança ao ciclista, ao fato de organizar grupos de "ciclistas"
+-Disponibiliza profissionais qualificados na área para monitorar os grupos de "pedaladas"
+-Possibilita a troca de pontos(vouchers) por produtos/serviços com os "parceiros"
+-Aumenta o alcance de divulgação comercial(empresas)
+
+Funcionalidade:
+A empresa XXX vai contratar os funcionários e disponibilizar os horários para as rotas.
