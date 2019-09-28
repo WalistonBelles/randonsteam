@@ -67,12 +67,16 @@ app.use('/static', express.static('public'));
 		})
 	})
 
-	app.get('/turmas', function(req,res){
-		
+	app.get('/turmasUsuario', function(req,res){
 		Turma.findAll().then(function(turmas){
-			res.render('turmas', {turmas: turmas})
+			res.render('turmasUsuario', {turmas: turmas})
 		})
-		
+	})
+
+	app.get('/turmasProfissional', function(req,res){
+		Turma.findAll().then(function(turmas){
+			res.render('turmasProfissional', {turmas: turmas})
+		})
 	})
 
 	app.get('/cadastroTurmas', function(req,res){
