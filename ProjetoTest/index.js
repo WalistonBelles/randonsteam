@@ -31,8 +31,19 @@ const Turma = require('./models/Turma')
 
 	//Validar login
 	app.post('/login', function(req, res){
-		Cliente.findOne({ where: {nome_cli: req.body.nome}}).then(function(clientes){
-			res.render('home', Cliente.findOne({ where: {nome_cli: req.body.nome}}))
+		Cliente.findOne({ where: {nome_cli: req.body.nome, senha_cli: req.body.senha}}).then(function(clientes){
+			if(clientes != null){
+				Cliente.findOne({where:{tipo_cli: "Profissional", nome_cli: req.body.nome}}).then(function(clientes){
+					if ( clientes != null){
+					console.log(clientes)
+					res.render('homeProfissional', {nome_cli: req.body.nome, senha_cli: req.body.senha})
+				}
+				else
+					res.render('home', {tipo_cli: "Profissional", nome_cli: req.body.nome, senha_cli: req.body.senha})
+				})
+			}
+			else
+				res.send("Usuário Inválido!")
 		})
 	})
 
